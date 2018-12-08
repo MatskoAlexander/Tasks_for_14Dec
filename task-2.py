@@ -1,6 +1,6 @@
 import random
 k = 0
-c = ''
+guessed = ''
 while k < 4:
     a = random.randint(1, 6)
     if a == 1:
@@ -15,38 +15,47 @@ while k < 4:
         b = 'С'
     elif a == 6:
         b = 'Т'
-    c = c + b
+    guessed = guessed + b
     k = k + 1
 n = 1
 print('Загадано четырехбуквенное слово из букв А,E,Н,О,С,Т.')
 print('Отгадай!')
 s = 0
 d = 0
-while n < 11 or s == 4:
+while n <= 10 and s != 4:
     print('Попытка №: ', n)
-    x = input()
-    if x[0] == c[0]:
+    answer = input().upper()
+    if answer[0] == guessed[0]:
         s = s + 1
-    else:
+    elif answer[0] != guessed[0] and guessed.find(answer[0]) != -1:
         d = d + 1
-    if x[1] == c[1]:
+    else:
+        pass
+    if answer[1] == guessed[1]:
         s = s + 1
-    else:
+    elif answer[1] != guessed[1] and guessed.find(answer[1]) != -1:
         d = d + 1
-    if x[2] == c[2]:
+    else:
+        pass
+    if answer[2] == guessed[2]:
         s = s + 1
-    else:
+    elif answer[2] != guessed[2] and guessed.find(answer[2]) != -1:
         d = d + 1
-    if x[3] == c[3]:
+    else:
+        pass
+    if answer[3] == guessed[3]:
         s = s + 1
-    else:
+    elif answer[3] != guessed[3] and guessed.find(answer[3]) != -1:
         d = d + 1
+    else:
+        pass
     if s == 4:
-        print('Вы выйгрвли!')
-        break
+        print('Вы выиграли!')
     else:
-        print('На "своём месте": ', s)
-        print('На "чужом месте": ', d)
+        print('На \"своём месте\": ', s)
+        print('На \"чужом месте\": ', d)
     s = 0
     d = 0
     n = n + 1
+    if n == 11 and s != 4:
+        print('Вы проиграли!')
