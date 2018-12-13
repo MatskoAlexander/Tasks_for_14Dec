@@ -9,6 +9,8 @@ elif type_lang.lower() == 'фиолетовый':
     sconsonant = 'ф'
 elif type_lang.lower() == 'белый':
     sconsonant = 'б'
+elif type_lang.lower() == 'зелёный':
+    sconsonant = 'з'
 
 n = 0
 vowels = 'аеёиоуыэюя'
@@ -19,5 +21,6 @@ for i in vowels:
         text = text.replace(i, i + sconsonant + i.lower())
         n = n + 1
     else:
+        print('для', i, 'перебор закончен')
         n = 0
 print(text)
