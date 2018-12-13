@@ -1,4 +1,4 @@
-text = str(input('Введите текст:\n '))
+text = str(input('Введите текст:\n'))
 type_lang = str(input('Введите язык: '))
 
 if type_lang.lower() == 'синий':
@@ -20,6 +20,5 @@ for i in vowels:
     if num != -1:
         text = text.replace(i, i + sconsonant + i.lower())
         n = n + 1
-    else:
-        n = 0
+    n = 0
 print(text)
