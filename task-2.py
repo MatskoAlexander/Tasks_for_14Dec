@@ -38,20 +38,34 @@ while counter1 <= 10 and true != 4:
     print('Попытка №: ', counter1)
     answer = input().upper()
     if len(answer) == 4:
+        count2 = 0
         for i in range(4):
+            count1 = answer.count(answer[i])
             if answer[i] == guessed[i]:
                 true = true + 1
             elif answer[i] != guessed[i] and answer[i] in guessed:
                 false = false + 1
                 if answer.count(answer[i]) == 4:
                     false = 0
-                elif answer.count(answer[i]) == 3:
-                    false = 2 - true
-                elif answer.count(answer[i]) == 2:
-                    false = 4 - false / 2
-                false = int(false)
             else:
                 pass
+            if count1 >= count2:
+                count2 = count1
+        if count2 == 3 and true == 1:
+                if false == 1:
+                    false = 0
+                elif false > 1:
+                    false = 1
+        elif count2 == 3 and false == 2 and true == 2:
+            false = 0
+        elif count2 == 2:
+            if true == 3:
+                false = 0
+            elif true == 2 and false == 2:
+                false = 0
+        elif count2 == 1:
+            if true == 3 and false == 1:
+                false = 0
         counter1 = counter1 + 1
         if true == 4:
             print('Вы выиграли!')
