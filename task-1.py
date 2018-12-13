@@ -21,6 +21,5 @@ for i in vowels:
         text = text.replace(i, i + sconsonant + i.lower())
         n = n + 1
     else:
-        print('для', i, 'перебор закончен')
         n = 0
 print(text)
