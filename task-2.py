@@ -76,6 +76,7 @@ while counter1 <= 10 and true != 4:
             print('Вы проиграли!')
             print('На \"своём месте\": ', true)
             print('На \"чужом месте\": ', false)
+            print('Загаданное слово: ', guessed)
         else:
             print('На \"своём месте\": ', true)
             print('На \"чужом месте\": ', false)
