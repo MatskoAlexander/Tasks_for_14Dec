@@ -71,6 +71,7 @@ while counter1 <= 10 and true != 4:
             print('Вы выиграли!')
             print('На \"своём месте\": ', true)
             print('На \"чужом месте\": ', false)
+            break
         elif counter1 == 11 and true != 4:
             print('Вы проиграли!')
             print('На \"своём месте\": ', true)

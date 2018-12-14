@@ -1,5 +1,5 @@
-text = str(input('Введите текст:\n'))
-type_lang = str(input('Введите язык: '))
+text = input('Введите текст:\n')
+type_lang = input('Введите язык: ')
 
 if type_lang.lower() == 'синий':
     sconsonant = 'c'
@@ -12,13 +12,8 @@ elif type_lang.lower() == 'белый':
 elif type_lang.lower() == 'зелёный':
     sconsonant = 'з'
 
-n = 0
 vowels = 'аеёиоуыэюя'
 vowels = vowels + vowels.upper()
 for i in vowels:
-    num = text.find(i, n)
-    if num != -1:
-        text = text.replace(i, i + sconsonant + i.lower())
-        n = n + 1
-    n = 0
+    text = text.replace(i, i + sconsonant + i.lower())
 print(text)
